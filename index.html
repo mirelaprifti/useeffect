@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Just Fucking Use Effect</title>
+    <meta name="description" content="Stop fighting with try-catch. Stop drowning in Promise.all. Just fucking use Effect.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="noise"></div>
+    <div class="gradient-bg"></div>
+
+    <header>
+        <nav>
+            <a href="#" class="logo">
+                <span class="logo-icon">⚡</span>
+                <span>JFUE</span>
+            </a>
+            <div class="nav-links">
+                <a href="#why">Why?</a>
+                <a href="#comparison">The Truth</a>
+                <a href="#testimonials">Confessions</a>
+                <a href="https://effect.website" target="_blank" class="cta-nav">Get Effect →</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-badge">
+                <span class="pulse"></span>
+                TypeScript's Missing Standard Library
+            </div>
+            <h1>
+                <span class="hero-prefix">Just</span>
+                <span class="hero-highlight glitch" data-text="Fucking">Fucking</span>
+                <span class="hero-main">Use Effect</span>
+            </h1>
+            <p class="hero-sub">
+                You've tried everything else. The 47 npm packages. The spaghetti try-catch blocks.
+                The "it works on my machine" deployments. <br><br>
+                <strong>It's time to stop coping.</strong>
+            </p>
+            <div class="hero-cta">
+                <a href="https://effect.website" target="_blank" class="btn btn-primary">
+                    <span>Accept Your Fate</span>
+                    <span class="btn-arrow">→</span>
+                </a>
+                <a href="https://github.com/Effect-TS/effect" target="_blank" class="btn btn-secondary">
+                    <span>View on GitHub</span>
+                    <span class="stars">★ 10k+</span>
+                </a>
+            </div>
+            <div class="hero-terminal">
+                <div class="terminal-header">
+                    <span class="terminal-dot red"></span>
+                    <span class="terminal-dot yellow"></span>
+                    <span class="terminal-dot green"></span>
+                    <span class="terminal-title">your-sanity.ts</span>
+                </div>
+                <pre class="terminal-body"><code><span class="keyword">npm</span> <span class="function">install</span> <span class="string">effect</span>
+
+<span class="comment">// That's it. That's the tweet.</span>
+<span class="comment">// No 47 dependencies. No config files.</span>
+<span class="comment">// Just vibes and type safety.</span></code></pre>
+            </div>
+        </section>
+
+        <section id="why" class="why-section">
+            <h2 class="section-title">
+                <span class="title-accent">///</span>
+                Why Should You Give a Fuck?
+            </h2>
+            <div class="reasons-grid">
+                <div class="reason-card">
+                    <div class="reason-icon">🔥</div>
+                    <h3>Try-Catch is a War Crime</h3>
+                    <p>You know that feeling when you wrap everything in try-catch and pray? Effect treats errors as <em>values</em>. Your compiler literally tells you what can fail. Revolutionary, we know.</p>
+                </div>
+                <div class="reason-card">
+                    <div class="reason-icon">💀</div>
+                    <h3>Promise.all is a Death Trap</h3>
+                    <p>One failure = everything explodes. No retry. No cleanup. No survivors. Effect has retries, timeouts, and interruption built in. Like an adult wrote it.</p>
+                </div>
+                <div class="reason-card">
+                    <div class="reason-icon">🗑️</div>
+                    <h3>Your node_modules is a Landfill</h3>
+                    <p>47 dependencies for basic functionality? Effect is batteries-included. It's TypeScript's missing standard library. Marie Kondo would be proud.</p>
+                </div>
+                <div class="reason-card">
+                    <div class="reason-icon">🧠</div>
+                    <h3>You Don't Need a PhD in FP</h3>
+                    <p>Functional programming without the gatekeeping. No monad lectures. No category theory homework. Just good patterns that work.</p>
+                </div>
+                <div class="reason-card">
+                    <div class="reason-icon">📊</div>
+                    <h3>Observability That Doesn't Suck</h3>
+                    <p>Built-in tracing. OpenTelemetry support. Metrics that actually mean something. See exactly where your code is slow or stupid.</p>
+                </div>
+                <div class="reason-card">
+                    <div class="reason-icon">🏗️</div>
+                    <h3>Production-Ready Since Day One</h3>
+                    <p>Not some academic experiment. Real companies ship real products with Effect. Version 3.0 is API stable. This shit works.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="comparison" class="comparison-section">
+            <h2 class="section-title">
+                <span class="title-accent">///</span>
+                The Painful Truth
+            </h2>
+            <div class="comparison-container">
+                <div class="comparison-card bad">
+                    <div class="comparison-header">
+                        <span class="comparison-label">😵 Without Effect</span>
+                        <span class="comparison-tag">Suffering</span>
+                    </div>
+                    <pre class="code-block"><code><span class="keyword">async function</span> <span class="function">fetchUserData</span>(id: string) {
+  <span class="keyword">try</span> {
+    <span class="keyword">const</span> user = <span class="keyword">await</span> <span class="function">fetch</span>(<span class="string">`/api/users/${id}`</span>);
+    <span class="keyword">if</span> (!user.ok) <span class="keyword">throw new</span> <span class="type">Error</span>(<span class="string">"User not found"</span>);
+    <span class="keyword">const</span> data = <span class="keyword">await</span> user.<span class="function">json</span>();
+
+    <span class="keyword">const</span> posts = <span class="keyword">await</span> <span class="function">fetch</span>(<span class="string">`/api/posts?userId=${id}`</span>);
+    <span class="keyword">if</span> (!posts.ok) <span class="keyword">throw new</span> <span class="type">Error</span>(<span class="string">"Posts failed"</span>);
+    <span class="keyword">const</span> postsData = <span class="keyword">await</span> posts.<span class="function">json</span>();
+
+    <span class="keyword">return</span> { user: data, posts: postsData };
+  } <span class="keyword">catch</span> (e) {
+    <span class="comment">// What even failed? Who knows! 🤷</span>
+    <span class="function">console.error</span>(<span class="string">"Something broke lol"</span>, e);
+    <span class="keyword">throw</span> e; <span class="comment">// Re-throw and pray</span>
+  }
+}</code></pre>
+                    <ul class="comparison-issues">
+                        <li>❌ No idea what can fail</li>
+                        <li>❌ Error types? What's that?</li>
+                        <li>❌ No retry logic</li>
+                        <li>❌ No cancellation</li>
+                        <li>❌ Pain</li>
+                    </ul>
+                </div>
+                <div class="comparison-card good">
+                    <div class="comparison-header">
+                        <span class="comparison-label">😎 With Effect</span>
+                        <span class="comparison-tag">Enlightenment</span>
+                    </div>
+                    <pre class="code-block"><code><span class="keyword">import</span> { Effect, Schedule } <span class="keyword">from</span> <span class="string">"effect"</span>
+
+<span class="keyword">const</span> fetchUserData = (id: string) =>
+  Effect.<span class="function">gen</span>(<span class="keyword">function</span>* () {
+    <span class="keyword">const</span> user = <span class="keyword">yield</span>* <span class="function">fetchUser</span>(id).<span class="function">pipe</span>(
+      Effect.<span class="function">retry</span>(Schedule.<span class="function">exponential</span>(<span class="string">"1 second"</span>)),
+      Effect.<span class="function">timeout</span>(<span class="string">"5 seconds"</span>)
+    )
+
+    <span class="keyword">const</span> posts = <span class="keyword">yield</span>* <span class="function">fetchPosts</span>(user.id)
+
+    <span class="keyword">return</span> { user, posts }
+  })
+
+<span class="comment">// Type tells you EXACTLY what can fail:</span>
+<span class="comment">// Effect&lt;UserWithPosts, UserNotFound | NetworkError, never&gt;</span></code></pre>
+                    <ul class="comparison-wins">
+                        <li>✅ Errors in the type signature</li>
+                        <li>✅ Automatic retry with backoff</li>
+                        <li>✅ Timeout handling built-in</li>
+                        <li>✅ Composable and testable</li>
+                        <li>✅ Inner peace</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials" class="testimonials-section">
+            <h2 class="section-title">
+                <span class="title-accent">///</span>
+                Developer Confessions
+            </h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"I used to mass-catch everything and log 'something went wrong'. Now I know exactly what failed and why. My therapist is concerned I'm too happy."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">👨‍💻</div>
+                        <div class="author-info">
+                            <span class="author-name">Former Promise.all Victim</span>
+                            <span class="author-title">Senior Suffering Engineer</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"My node_modules used to be 2GB. Now it's just Effect and vibes. I can finally see my children again."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">👩‍💻</div>
+                        <div class="author-info">
+                            <span class="author-name">Recovered npm Addict</span>
+                            <span class="author-title">Dependency Detox Survivor</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Someone told me Effect was 'functional programming' and I panicked. Then I used it and realized I don't need to know what a monad is. Thank fuck."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">🧑‍💻</div>
+                        <div class="author-info">
+                            <span class="author-name">Monad-Phobic Developer</span>
+                            <span class="author-title">Now Happily Unenlightened</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="features-section">
+            <h2 class="section-title">
+                <span class="title-accent">///</span>
+                What You Actually Get
+            </h2>
+            <div class="features-list">
+                <div class="feature-item">
+                    <span class="feature-check">✓</span>
+                    <span class="feature-text">Type-safe error handling (errors are <em>values</em>, not surprises)</span>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-check">✓</span>
+                    <span class="feature-text">Retry policies with exponential backoff</span>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-check">✓</span>
+                    <span class="feature-text">Interruption and timeout handling</span>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-check">✓</span>
+                    <span class="feature-text">Resource cleanup that actually works</span>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-check">✓</span>
+                    <span class="feature-text">Concurrency management (not just "fire and pray")</span>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-check">✓</span>
+                    <span class="feature-text">Built-in tracing and OpenTelemetry support</span>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-check">✓</span>
+                    <span class="feature-text">Tree-shakeable (your bundle thanks you)</span>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-check">✓</span>
+                    <span class="feature-text">API stable at v3.0 (no more breaking changes roulette)</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="cta-content">
+                <h2>Stop Fucking Around</h2>
+                <p>You've read this far. You know your current code is held together by hope and console.logs. Make the switch.</p>
+                <div class="cta-buttons">
+                    <a href="https://effect.website/docs" target="_blank" class="btn btn-primary btn-large">
+                        Read the Docs
+                    </a>
+                    <a href="https://discord.gg/effect-ts" target="_blank" class="btn btn-secondary btn-large">
+                        Join Discord
+                    </a>
+                </div>
+                <div class="cta-terminal">
+                    <code>npm install effect</code>
+                    <button class="copy-btn" onclick="copyCommand()">Copy</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p class="footer-disclaimer">
+                This is a fan-made parody site. We just really like Effect and think you should too.
+            </p>
+            <div class="footer-links">
+                <a href="https://effect.website" target="_blank">Official Effect Website</a>
+                <a href="https://github.com/Effect-TS/effect" target="_blank">GitHub</a>
+                <a href="https://discord.gg/effect-ts" target="_blank">Discord</a>
+                <a href="https://twitter.com/EffectTS_" target="_blank">Twitter</a>
+            </div>
+            <p class="footer-copy">Made with spite for try-catch blocks everywhere. © 2024</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
