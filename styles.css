@@ -651,6 +651,143 @@ main {
     font-style: normal;
 }
 
+/* AI Section */
+.ai-section {
+    padding: 6rem 2rem;
+    background: var(--bg-secondary);
+}
+
+.ai-hero {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 3rem;
+}
+
+.ai-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(135deg, rgba(168, 85, 247, 0.15), rgba(6, 182, 212, 0.15));
+    border: 1px solid rgba(168, 85, 247, 0.3);
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+}
+
+.ai-icon {
+    font-size: 1.2rem;
+}
+
+.ai-intro {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+}
+
+.ai-intro strong {
+    color: var(--text-primary);
+}
+
+.ai-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto 3rem;
+}
+
+.ai-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: all 0.3s;
+}
+
+.ai-card:hover {
+    border-color: rgba(6, 182, 212, 0.5);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(6, 182, 212, 0.1);
+}
+
+.ai-card-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.ai-card h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.ai-card p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.ai-card em {
+    color: #06b6d4;
+    font-style: normal;
+    font-weight: 600;
+}
+
+.ai-code-section {
+    max-width: 800px;
+    margin: 0 auto 2rem;
+    background: var(--bg-primary);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.ai-code-header {
+    padding: 1rem 1.5rem;
+    background: var(--bg-tertiary);
+    border-bottom: 1px solid var(--border);
+}
+
+.ai-code-title {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.ai-code {
+    border: none;
+    border-radius: 0;
+}
+
+.ai-cta {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.ai-footnote {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.ai-footnote a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.ai-footnote a:hover {
+    text-decoration: underline;
+}
+
 /* CTA Section */
 .cta-section {
     padding: 6rem 2rem;

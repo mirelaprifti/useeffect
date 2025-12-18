@@ -23,6 +23,7 @@
             <div class="nav-links">
                 <a href="#why">Why?</a>
                 <a href="#comparison">The Truth</a>
+                <a href="#ai">AI Agents</a>
                 <a href="#testimonials">Confessions</a>
                 <a href="https://effect.website" target="_blank" class="cta-nav">Get Effect →</a>
             </div>
@@ -255,6 +256,87 @@
                     <span class="feature-text">API stable at v3.0 (no more breaking changes roulette)</span>
                 </div>
             </div>
+        </section>
+
+        <section id="ai" class="ai-section">
+            <h2 class="section-title">
+                <span class="title-accent">///</span>
+                Building AI Agents? Yeah, Effect Does That Too
+            </h2>
+            <div class="ai-hero">
+                <div class="ai-badge">
+                    <span class="ai-icon">🤖</span>
+                    <span>@effect/ai</span>
+                </div>
+                <p class="ai-intro">
+                    LLMs are non-deterministic chaos machines. APIs fail. Rate limits hit. Responses stream.
+                    Tokens run out. <strong>Effect was literally built for this shit.</strong>
+                </p>
+            </div>
+            <div class="ai-grid">
+                <div class="ai-card">
+                    <div class="ai-card-icon">🔄</div>
+                    <h3>Provider-Agnostic</h3>
+                    <p>Write your agent logic once. Swap between <em>OpenAI</em>, <em>Anthropic</em>, <em>Google</em>, or <em>Amazon Bedrock</em> at runtime. No rewrites. No vendor lock-in. Just vibes.</p>
+                </div>
+                <div class="ai-card">
+                    <div class="ai-card-icon">🛡️</div>
+                    <h3>Reliability Built-In</h3>
+                    <p>Retries with backoff. Timeouts. Circuit breakers. Rate limiting. All the things you'd have to build yourself, except you don't have to. Because Effect.</p>
+                </div>
+                <div class="ai-card">
+                    <div class="ai-card-icon">🏃</div>
+                    <h3>Structured Concurrency</h3>
+                    <p>Run multiple LLM calls in parallel. Cancel stale requests. Race providers against each other. Stream partial results. All safely managed. No orphaned promises.</p>
+                </div>
+                <div class="ai-card">
+                    <div class="ai-card-icon">🧪</div>
+                    <h3>Actually Testable</h3>
+                    <p>Mock your LLM responses. Inject test doubles. No more "I hope this works in prod" prayers. Your AI code can have <em>real tests</em> now.</p>
+                </div>
+            </div>
+            <div class="ai-code-section">
+                <div class="ai-code-header">
+                    <span class="ai-code-title">Your AI Agent, But Make It Reliable</span>
+                </div>
+                <pre class="code-block ai-code"><code><span class="keyword">import</span> { AiChat } <span class="keyword">from</span> <span class="string">"@effect/ai"</span>
+<span class="keyword">import</span> { OpenAiClient } <span class="keyword">from</span> <span class="string">"@effect/ai-openai"</span>
+<span class="keyword">import</span> { Effect, Schedule } <span class="keyword">from</span> <span class="string">"effect"</span>
+
+<span class="keyword">const</span> askAgent = (prompt: string) =>
+  Effect.<span class="function">gen</span>(<span class="keyword">function</span>* () {
+    <span class="keyword">const</span> ai = <span class="keyword">yield</span>* AiChat
+
+    <span class="keyword">const</span> response = <span class="keyword">yield</span>* ai.<span class="function">generateText</span>({
+      prompt,
+      system: <span class="string">"You are a helpful assistant"</span>
+    }).<span class="function">pipe</span>(
+      Effect.<span class="function">retry</span>(Schedule.<span class="function">exponential</span>(<span class="string">"500 millis"</span>)),
+      Effect.<span class="function">timeout</span>(<span class="string">"30 seconds"</span>),
+      Effect.<span class="function">withSpan</span>(<span class="string">"ai.generateText"</span>) <span class="comment">// Built-in tracing!</span>
+    )
+
+    <span class="keyword">return</span> response.text
+  })
+
+<span class="comment">// Swap providers without changing business logic</span>
+<span class="keyword">const</span> program = askAgent(<span class="string">"Explain monads like I'm 5"</span>).<span class="function">pipe</span>(
+  Effect.<span class="function">provide</span>(OpenAiClient.<span class="function">layer</span>({ apiKey }))
+  <span class="comment">// Or: AnthropicClient.layer(), GoogleClient.layer(), etc.</span>
+)</code></pre>
+            </div>
+            <div class="ai-cta">
+                <a href="https://effect.website/docs/ai/introduction" target="_blank" class="btn btn-primary">
+                    <span>Read the AI Docs</span>
+                    <span class="btn-arrow">→</span>
+                </a>
+                <a href="https://www.npmjs.com/package/@effect/ai" target="_blank" class="btn btn-secondary">
+                    <span>View on npm</span>
+                </a>
+            </div>
+            <p class="ai-footnote">
+                Real companies like <a href="https://www.zenml.io/llmops-database/building-reliable-ai-agent-systems-with-effect-typescript-framework" target="_blank">14.ai</a> use Effect for production AI agent systems. Because when your AI talks to customers, "it works sometimes" isn't good enough.
+            </p>
         </section>
 
         <section class="cta-section">
