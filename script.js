@@ -32,39 +32,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Animate elements on scroll
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-        }
-    });
-}, observerOptions);
-
-// Add animation classes to elements
-document.addEventListener('DOMContentLoaded', () => {
-    const animateElements = [
-        '.reason-card',
-        '.comparison-card',
-        '.testimonial-card',
-        '.feature-item',
-        '.ai-card',
-        '.llm-card'
-    ];
-
-    animateElements.forEach(selector => {
-        document.querySelectorAll(selector).forEach((el, index) => {
-            el.classList.add('animate-in');
-            el.style.transitionDelay = `${index * 0.1}s`;
-            observer.observe(el);
-        });
-    });
-});
 
 // Parallax effect on gradient
 document.addEventListener('mousemove', (e) => {
