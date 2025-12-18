@@ -701,7 +701,7 @@ main {
 
 .ai-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
     max-width: 1200px;
     margin: 0 auto 3rem;
@@ -838,7 +838,7 @@ main {
 
 .llm-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
     max-width: 1200px;
     margin: 0 auto 3rem;
@@ -1062,8 +1062,6 @@ footer {
 /* Responsive */
 @media (max-width: 1024px) {
     .reasons-grid,
-    .ai-grid,
-    .llm-grid,
     .testimonials-grid {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -1145,9 +1143,13 @@ footer {
     }
 
     .reasons-grid,
-    .ai-grid,
-    .llm-grid,
     .testimonials-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .ai-grid,
+    .llm-grid {
         grid-template-columns: 1fr;
         gap: 1rem;
     }
