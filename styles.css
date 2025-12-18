@@ -1143,13 +1143,9 @@ footer {
     }
 
     .reasons-grid,
-    .testimonials-grid {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-
     .ai-grid,
-    .llm-grid {
+    .llm-grid,
+    .testimonials-grid {
         grid-template-columns: 1fr;
         gap: 1rem;
     }
