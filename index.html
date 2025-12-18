@@ -17,14 +17,11 @@
     <header>
         <nav>
             <a href="#" class="logo">
-                <svg class="logo-icon" viewBox="0 0 200 200" width="24" height="24">
-                    <path fill="currentColor" d="M167.7 32.3H86.5l-54.2 67.4 54.2 67.9h81.2l-54.2-67.9 54.2-67.4z"/>
-                </svg>
+                <img src="assets/effect-logomark-white.svg" alt="Effect" class="logo-icon">
                 <span>JFUE</span>
             </a>
             <div class="nav-links">
                 <a href="#why">Why?</a>
-                <a href="#comparison">The Truth</a>
                 <a href="#ai">AI Agents</a>
                 <a href="#llm-coding">LLMs</a>
                 <a href="#testimonials">Confessions</a>
@@ -41,15 +38,7 @@
                     TypeScript's Missing Standard Library
                 </div>
                 <div class="hero-logo">
-                    <svg viewBox="0 0 200 200" width="80" height="80">
-                        <path fill="url(#logo-gradient)" d="M167.7 32.3H86.5l-54.2 67.4 54.2 67.9h81.2l-54.2-67.9 54.2-67.4z"/>
-                        <defs>
-                            <linearGradient id="logo-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" style="stop-color:#a855f7"/>
-                                <stop offset="100%" style="stop-color:#ec4899"/>
-                            </linearGradient>
-                        </defs>
-                    </svg>
+                    <img src="assets/effect-logo-white.svg" alt="Effect" class="hero-logo-img">
                 </div>
                 <h1>
                     <span class="hero-prefix">Just</span>
@@ -123,76 +112,6 @@
                     <div class="reason-icon">🏗️</div>
                     <h3>Production-Ready Since Day One</h3>
                     <p>Not some academic experiment. Real companies ship real products with Effect. Version 3.0 is API stable. This shit works.</p>
-                </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="comparison" class="comparison-section">
-            <div class="container">
-                <h2 class="section-title">
-                    <span class="title-accent">///</span>
-                    The Painful Truth
-                </h2>
-                <div class="comparison-container">
-                <div class="comparison-card bad">
-                    <div class="comparison-header">
-                        <span class="comparison-label">😵 Without Effect</span>
-                        <span class="comparison-tag">Suffering</span>
-                    </div>
-                    <pre class="code-block"><code><span class="keyword">async function</span> <span class="function">fetchUserData</span>(id: string) {
-  <span class="keyword">try</span> {
-    <span class="keyword">const</span> user = <span class="keyword">await</span> <span class="function">fetch</span>(<span class="string">`/api/users/${id}`</span>);
-    <span class="keyword">if</span> (!user.ok) <span class="keyword">throw new</span> <span class="type">Error</span>(<span class="string">"User not found"</span>);
-    <span class="keyword">const</span> data = <span class="keyword">await</span> user.<span class="function">json</span>();
-
-    <span class="keyword">const</span> posts = <span class="keyword">await</span> <span class="function">fetch</span>(<span class="string">`/api/posts?userId=${id}`</span>);
-    <span class="keyword">if</span> (!posts.ok) <span class="keyword">throw new</span> <span class="type">Error</span>(<span class="string">"Posts failed"</span>);
-    <span class="keyword">const</span> postsData = <span class="keyword">await</span> posts.<span class="function">json</span>();
-
-    <span class="keyword">return</span> { user: data, posts: postsData };
-  } <span class="keyword">catch</span> (e) {
-    <span class="comment">// What even failed? Who knows! 🤷</span>
-    <span class="function">console.error</span>(<span class="string">"Something broke lol"</span>, e);
-    <span class="keyword">throw</span> e; <span class="comment">// Re-throw and pray</span>
-  }
-}</code></pre>
-                    <ul class="comparison-issues">
-                        <li>❌ No idea what can fail</li>
-                        <li>❌ Error types? What's that?</li>
-                        <li>❌ No retry logic</li>
-                        <li>❌ No cancellation</li>
-                        <li>❌ Pain</li>
-                    </ul>
-                </div>
-                <div class="comparison-card good">
-                    <div class="comparison-header">
-                        <span class="comparison-label">😎 With Effect</span>
-                        <span class="comparison-tag">Enlightenment</span>
-                    </div>
-                    <pre class="code-block"><code><span class="keyword">import</span> { Effect, Schedule } <span class="keyword">from</span> <span class="string">"effect"</span>
-
-<span class="keyword">const</span> fetchUserData = (id: string) =>
-  Effect.<span class="function">gen</span>(<span class="keyword">function</span>* () {
-    <span class="keyword">const</span> user = <span class="keyword">yield</span>* <span class="function">fetchUser</span>(id).<span class="function">pipe</span>(
-      Effect.<span class="function">retry</span>(Schedule.<span class="function">exponential</span>(<span class="string">"1 second"</span>)),
-      Effect.<span class="function">timeout</span>(<span class="string">"5 seconds"</span>)
-    )
-
-    <span class="keyword">const</span> posts = <span class="keyword">yield</span>* <span class="function">fetchPosts</span>(user.id)
-
-    <span class="keyword">return</span> { user, posts }
-  })
-
-<span class="comment">// Type tells you EXACTLY what can fail:</span>
-<span class="comment">// Effect&lt;UserWithPosts, UserNotFound | NetworkError, never&gt;</span></code></pre>
-                    <ul class="comparison-wins">
-                        <li>✅ Errors in the type signature</li>
-                        <li>✅ Automatic retry with backoff</li>
-                        <li>✅ Timeout handling built-in</li>
-                        <li>✅ Composable and testable</li>
-                        <li>✅ Inner peace</li>
-                    </ul>
                 </div>
                 </div>
             </div>

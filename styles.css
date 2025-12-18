@@ -174,7 +174,9 @@ main {
     margin-bottom: 1.5rem;
 }
 
-.hero-logo svg {
+.hero-logo-img {
+    height: 60px;
+    width: auto;
     filter: drop-shadow(0 0 20px rgba(168, 85, 247, 0.4));
 }
 
