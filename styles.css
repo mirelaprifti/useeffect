@@ -788,6 +788,159 @@ main {
     text-decoration: underline;
 }
 
+/* LLM Coding Section */
+.llm-section {
+    padding: 6rem 2rem;
+    background: var(--bg-primary);
+}
+
+.llm-hero {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 3rem;
+}
+
+.llm-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(135deg, rgba(251, 191, 36, 0.15), rgba(249, 115, 22, 0.15));
+    border: 1px solid rgba(251, 191, 36, 0.3);
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    color: #fbbf24;
+    margin-bottom: 1.5rem;
+}
+
+.llm-icon {
+    font-size: 1.2rem;
+}
+
+.llm-intro {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+}
+
+.llm-intro strong {
+    color: var(--text-primary);
+}
+
+.llm-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto 3rem;
+}
+
+.llm-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: all 0.3s;
+}
+
+.llm-card:hover {
+    border-color: rgba(251, 191, 36, 0.5);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(251, 191, 36, 0.1);
+}
+
+.llm-card-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.llm-card h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.llm-card p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.llm-card code {
+    background: var(--bg-tertiary);
+    padding: 0.15rem 0.4rem;
+    border-radius: 4px;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: #fbbf24;
+}
+
+.llm-demo {
+    max-width: 800px;
+    margin: 0 auto 2rem;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.llm-demo-header {
+    padding: 1.25rem 1.5rem;
+    background: var(--bg-tertiary);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    align-items: flex-start;
+}
+
+.llm-demo-you {
+    font-weight: 700;
+    color: #22c55e;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+}
+
+.llm-demo-prompt {
+    color: var(--text-secondary);
+    font-style: italic;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.llm-demo-response {
+    padding: 0;
+}
+
+.llm-demo-ai {
+    display: block;
+    padding: 1rem 1.5rem 0.5rem;
+    font-weight: 700;
+    color: #a855f7;
+    font-size: 0.9rem;
+}
+
+.llm-code {
+    border: none;
+    border-radius: 0;
+    margin: 0;
+}
+
+.llm-footnote {
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 1rem;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+.llm-footnote strong {
+    color: #fbbf24;
+}
+
 /* CTA Section */
 .cta-section {
     padding: 6rem 2rem;

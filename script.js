@@ -53,7 +53,8 @@ document.addEventListener('DOMContentLoaded', () => {
         '.comparison-card',
         '.testimonial-card',
         '.feature-item',
-        '.ai-card'
+        '.ai-card',
+        '.llm-card'
     ];
 
     animateElements.forEach(selector => {

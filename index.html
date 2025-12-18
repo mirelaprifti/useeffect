@@ -339,6 +339,79 @@
             </p>
         </section>
 
+        <section id="llm-coding" class="llm-section">
+            <h2 class="section-title">
+                <span class="title-accent">///</span>
+                "But Effect Looks Hard to Learn"
+            </h2>
+            <div class="llm-hero">
+                <div class="llm-badge">
+                    <span class="llm-icon">✨</span>
+                    <span>Plot Twist</span>
+                </div>
+                <p class="llm-intro">
+                    LLMs are <strong>really fucking good</strong> at writing Effect code.
+                    Claude, GPT-4, Gemini — they all know Effect. The patterns are consistent,
+                    the types guide the way, and the docs are excellent training data.
+                </p>
+            </div>
+            <div class="llm-grid">
+                <div class="llm-card">
+                    <div class="llm-card-icon">🎯</div>
+                    <h3>Types Are The Prompt</h3>
+                    <p>Effect's rich type signatures tell LLMs exactly what to write. Error types, dependencies, return values — it's all in the signature. The AI doesn't have to guess.</p>
+                </div>
+                <div class="llm-card">
+                    <div class="llm-card-icon">📚</div>
+                    <h3>Consistent Patterns</h3>
+                    <p>Effect code follows predictable patterns. <code>Effect.gen</code>, <code>pipe</code>, <code>Layer</code> — once an LLM sees the pattern, it nails it every time. Unlike your spaghetti async/await.</p>
+                </div>
+                <div class="llm-card">
+                    <div class="llm-card-icon">🔍</div>
+                    <h3>Self-Documenting</h3>
+                    <p>The type system makes code intentions crystal clear. LLMs can read Effect code and understand what it does. Try that with your 500-line try-catch pyramid.</p>
+                </div>
+                <div class="llm-card">
+                    <div class="llm-card-icon">🚀</div>
+                    <h3>Vibe Coding Works</h3>
+                    <p>Describe what you want in plain English. The LLM writes type-safe, error-handled, properly structured Effect code. You review, tweak, ship. Welcome to 2025.</p>
+                </div>
+            </div>
+            <div class="llm-demo">
+                <div class="llm-demo-header">
+                    <span class="llm-demo-you">You:</span>
+                    <span class="llm-demo-prompt">"Write me a function that fetches a user, retries 3 times with backoff, times out after 10 seconds, and logs the result"</span>
+                </div>
+                <div class="llm-demo-response">
+                    <span class="llm-demo-ai">Claude/GPT:</span>
+                    <pre class="code-block llm-code"><code><span class="keyword">import</span> { Effect, Schedule, Console } <span class="keyword">from</span> <span class="string">"effect"</span>
+
+<span class="keyword">const</span> fetchUserWithRetry = (id: string) =>
+  <span class="function">fetchUser</span>(id).<span class="function">pipe</span>(
+    Effect.<span class="function">retry</span>(
+      Schedule.<span class="function">recurs</span>(3).<span class="function">pipe</span>(
+        Schedule.<span class="function">intersect</span>(Schedule.<span class="function">exponential</span>(<span class="string">"1 second"</span>))
+      )
+    ),
+    Effect.<span class="function">timeout</span>(<span class="string">"10 seconds"</span>),
+    Effect.<span class="function">tap</span>((user) =>
+      Console.<span class="function">log</span>(<span class="string">`Fetched user: ${user.name}`</span>)
+    ),
+    Effect.<span class="function">tapError</span>((error) =>
+      Console.<span class="function">error</span>(<span class="string">`Failed to fetch user: ${error}`</span>)
+    )
+  )
+
+<span class="comment">// Type: Effect&lt;User, UserNotFound | TimeoutException, never&gt;</span>
+<span class="comment">// The compiler knows EXACTLY what can go wrong. Magic.</span></code></pre>
+                </div>
+            </div>
+            <p class="llm-footnote">
+                Seriously, just ask your favorite LLM to write Effect code. It's scary good.
+                The learning curve everyone worries about? <strong>The AI already climbed it for you.</strong>
+            </p>
+        </section>
+
         <section class="cta-section">
             <div class="cta-content">
                 <h2>Stop Fucking Around</h2>
