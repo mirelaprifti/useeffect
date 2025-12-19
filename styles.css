@@ -281,7 +281,7 @@ main {
 .hero-sub {
     font-size: 1.25rem;
     color: var(--text-secondary);
-    max-width: 720px;
+    max-width: 640px;
     margin-bottom: 2.5rem;
     line-height: 1.8;
 }
