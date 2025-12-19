@@ -281,7 +281,7 @@ main {
 .hero-sub {
     font-size: 1.25rem;
     color: var(--text-secondary);
-    max-width: 640px;
+    max-width: 720px;
     margin-bottom: 2.5rem;
     line-height: 1.8;
 }
@@ -648,7 +648,8 @@ main {
 
 .feature-item {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
+    justify-content: center;
     gap: 1rem;
     padding: 1rem 1.5rem;
     background: var(--bg-secondary);
